@@ -1,26 +1,21 @@
-class Clock {
-    var hour: Int
-    var minute: Int
-    var second: Int
+// Primary constructor initializes properties as 0
+class Clock() {
+    var hour: Int = 0
+    var minute: Int = 0
+    var second: Int = 0
 
-    // Create an object instance with default values of 0
-    constructor() {
-        hour = 0
-        minute = 0
-        second = 0
-    }
     // This constructor is used for setting the time manually
-    constructor(inputHour: Int, inputMinute: Int, inputSecond:Int) {
-        this.hour = inputHour
-        this.minute = inputMinute
-        this.second = inputSecond
+    constructor (inputHour: Int, inputMinute: Int, inputSecond: Int) : this() {
+        hour = inputHour
+        minute = inputMinute
+        second = inputSecond
     }
     fun resetClock() {
         hour = 0
         minute = 0
         second = 0
     }
-    // increments time by one second and resets when max value is reached, incrementing the next value by 1
+    // increments time by one second and resets when max value is reached, resets and increment the next variable by 1
     fun addSecond() {
         second++
         if (second >= 60) {
